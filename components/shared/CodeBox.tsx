@@ -63,6 +63,7 @@ const CodeBox = ({ code }: { code: string }) => {
         style={atomDark}
         customStyle={{
           borderRadius: "8px",
+          fontSize: "1.1rem",
           padding: "10px",
           overflowX: "auto",
           wordWrap: "break-word",
@@ -76,7 +77,7 @@ const CodeBox = ({ code }: { code: string }) => {
         size={"icon"}
         variant={"secondary"}
         disabled={copied}
-        className="absolute top-4 right-4 z-10"
+        className="absolute top-4 right-2 z-10"
       >
         {copied ? <Check /> : <Copy />}
       </Button>

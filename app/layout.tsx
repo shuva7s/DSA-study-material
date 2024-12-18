@@ -37,9 +37,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col lg:flex-row overflow-x-hidden">
+          <div className="flex flex-row overflow-x-hidden">
             <DesktopSideNav />
-            <div className="flex-1">
+            <div className="flex-1 flex flex-col ml-0 lg:ml-64 transition-all">
               {children}
               <Footer />
             </div>

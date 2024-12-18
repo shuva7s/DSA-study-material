@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 const DesktopSideNav = () => {
   const pathname = usePathname();
   return (
-    <aside className="hidden lg:block w-64 h-screen border-r flex-shrink-0 sticky top-0">
+    <aside className="w-64 h-screen fixed left-0 top-0 z-10 bg-background hidden lg:flex flex-col">
       <p className="p-3 text-3xl font-bold text-foreground">DSA</p>
-      <nav className="w-full custom_height overflow-y-auto p-3 pt-0">
+      <nav className="w-full p-3 pt-0 custom_height sticky top-0 overflow-y-auto">
         <ul className="flex flex-col">
           {navLinks.map((link) => (
             <li key={link.name}>
