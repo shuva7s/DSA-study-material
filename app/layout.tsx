@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-muted-foreground overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-muted-foreground`}
       >
         <ThemeProvider
           attribute="class"
@@ -37,7 +37,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-row">
+          <div className="flex flex-col lg:flex-row overflow-x-hidden">
             <DesktopSideNav />
             <div className="flex-1">
               {children}
