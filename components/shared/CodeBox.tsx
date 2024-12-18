@@ -1,32 +1,10 @@
 "use client";
-
-import { useTheme } from "next-themes";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {
-  atomDark,
-  oneLight,
-} from "react-syntax-highlighter/dist/esm/styles/prism";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Copy, Check } from "lucide-react";
 import { Button } from "../ui/button";
 
 const CodeBox = ({ code }: { code: string }) => {
-  const { theme } = useTheme();
-  const [syntaxStyle, setSyntaxStyle] = useState(oneLight); // Default to light theme
   const [copied, setCopied] = useState(false);
-
-  // Dynamically determine the theme
-  useEffect(() => {
-    if (
-      theme === "dark" ||
-      (theme === "system" &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      setSyntaxStyle(atomDark);
-    } else {
-      setSyntaxStyle(oneLight);
-    }
-  }, [theme]);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(code).then(() => {
@@ -36,18 +14,15 @@ const CodeBox = ({ code }: { code: string }) => {
   };
 
   return (
-    <div className="relative w-full">
-      <SyntaxHighlighter
-        language="cpp"
-        style={syntaxStyle}
-        customStyle={{
-          borderRadius: "8px",
-          padding: "10px",
-          overflowX: "auto",
+    <div className="relative overflow-hidden rounded-lg bg-accent text-foreground">
+      <pre
+        className="p-4 overflow-auto break-words whitespace-pre-wrap"
+        style={{
+          fontFamily: "monospace",
         }}
       >
         {code}
-      </SyntaxHighlighter>
+      </pre>
       <Button
         onClick={handleCopy}
         size={"icon"}

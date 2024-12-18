@@ -53,7 +53,7 @@ export default function Home() {
           }
         />
 
-        {/* <CodeBox code={cppCode} /> */}
+        <CodeBox code={cppCode} />
 
         <Text_section
           head_text="Roadmap"
