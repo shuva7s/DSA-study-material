@@ -1,101 +1,235 @@
-import Image from "next/image";
+import CodeBox from "@/components/shared/CodeBox";
+import Header from "@/components/shared/Header";
+import Text_section from "@/components/shared/Text_section";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Home() {
+  const cppCode = `
+  #include <iostream>
+  using namespace std;
+  
+  int main() {
+      cout << "Hello, World!" << endl;
+      return 0;
+  }
+    `;
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <>
+      <Header head_text="Introduction" />
+      <main className="wrapper my-4 flex flex-col gap-4">
+        <Text_section
+          head_text="Why?"
+          body_text={
+            <p>
+              Learning Data Structures and Algorithms (DSA) helps you{" "}
+              <b>solve problems efficiently</b>, write better code, and{" "}
+              <b>crack coding interviews</b>. It’s the foundation of programming
+              and makes you a smarter, more confident developer!
+            </p>
+          }
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        <Text_section
+          head_text="What?"
+          body_text={
+            <>
+              <p>
+                <b>DS (Data Structures):</b> A data structure is a{" "}
+                <b>way of organizing and storing data</b> to make it easier to
+                access and use. Examples include arrays, linked lists, stacks,
+                queues, and trees.
+              </p>
+              <p>
+                <b>A (Algorithms):</b> An algorithm is a step-by-step method or
+                <b> set of rules to solve a problem or complete a task</b>, like
+                sorting numbers or finding the shortest path.
+              </p>
+            </>
+          }
+        />
+
+        <CodeBox code={cppCode} />
+
+        <Text_section
+          head_text="Roadmap"
+          body_text={
+            <>
+              <Accordion type="single" collapsible defaultValue="item-1">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>
+                    <h3>Data structures (DS)</h3>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="pl-4 mt-2">
+                      <h4>Arrays</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Basics</li>
+                        <li>Operations</li>
+                        <li>Applications</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Strings</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Basics</li>
+                        <li>Manipulations</li>
+                        <li>Common Problems</li>
+                      </ul>
+                    </div>
+
+                    <div className="pl-4 mt-2">
+                      <h4>Linked Lists</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Single Linear Linked List</li>
+                        <li>Single Circular Linked List</li>
+                        <li>Double Linear Linked List</li>
+                        <li>Double Circular Linked List</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Stacks</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Implementations</li>
+                        <li>Applications</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Queues</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Implementations</li>
+                        <li>Applications</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Trees</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Binary tree</li>
+                        <li>Tree traversals DFS, BFS, Pre-In-Post order</li>
+                        <li>Binary search tree</li>
+                        <li>AVL trees</li>
+                        <li>Red black trees</li>
+                        <li>Heap tree</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Graphs</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Representations</li>
+                        <li>Traversals BFS and DFS</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Hashing</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Hash tables</li>
+                        <li>Hash maps</li>
+                        <li>Applications</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Advance Data Structures</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Tries: Autocomplete</li>
+                        <li>Segment trees</li>
+                        <li>Fenwick trees</li>
+                      </ul>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+
+              <Accordion type="single" collapsible defaultValue="item-2">
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>
+                    <h3>Algorithm (A)</h3>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="pl-4 mt-2">
+                      <h4>Basics</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Time and space complexity</li>
+                        <li>Recursion: Factorial, fibonacci</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Sorting</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Bubble sort</li>
+                        <li>Insertion sort</li>
+                        <li>Selection sort</li>
+                        <li>Merge sort</li>
+                        <li>Quick sort</li>
+                      </ul>
+                    </div>
+
+                    <div className="pl-4 mt-2">
+                      <h4>Searching</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Linear search</li>
+                        <li>Binary search</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Divide and Conquer</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Applications</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Greedy</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Coin change</li>
+                        <li>Activity selection</li>
+                        <li>Fractional Knapsack</li>
+                        <li>Job scheduling</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Dynamic Programming</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Basics: Memoization and tabulation</li>
+                        <li>0-1 Knapsack</li>
+                        <li>Longest Common Subsequence</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Graph algorithms</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>
+                          Shortest path: Dijkstra, Bellman-Ford, Floyd Warshall
+                        </li>
+                        <li>Minimum spanning tree: Prim, Kruskal</li>
+                        <li>Topological sort</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Backtracking</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>N Queens</li>
+                        <li>Sudoku solver</li>
+                        <li>Permutations</li>
+                      </ul>
+                    </div>
+                    <div className="pl-4 mt-2">
+                      <h4>Advance algorithms</h4>
+                      <ul className="pl-4 list-disc">
+                        <li>Sliding window: Sub array problems</li>
+                        <li>Two pointers: Pair sum, triplets</li>
+                        <li>Bit manipulations</li>
+                      </ul>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </>
+          }
+        />
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
