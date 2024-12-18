@@ -21,7 +21,7 @@ const SideNav = () => {
       <SheetTrigger>
         <PanelRight />
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="overflow-y-auto">
         <SheetHeader>
           <SheetTitle></SheetTitle>
           <SheetDescription></SheetDescription>
@@ -35,7 +35,6 @@ const SideNav = () => {
               <li key={link.name} className="overflow-y-auto">
                 <SheetClose asChild>
                   <Link
-                    // className="block hover:pl-1.5 hover:text-foreground py-3 transition-all"
                     className={`${
                       pathname === link.href
                         ? "text-foreground font-semibold"
