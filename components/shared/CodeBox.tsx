@@ -64,7 +64,7 @@ const CodeBox = ({ code }: { code: string }) => {
         customStyle={{
           borderRadius: "8px",
           fontSize: "1.1rem",
-          padding: "10px",
+          padding: "20px",
           overflowX: "auto",
           wordWrap: "break-word",
           whiteSpace: "pre-wrap",

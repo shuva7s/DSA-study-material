@@ -12,6 +12,10 @@ const navLinks = [
     href: "/strings",
   },
   {
+    name: "Linked lists",
+    href: "/linked-lists",
+  },
+  {
     name: "Single linear linked list",
     href: "/single-linear-linked-list",
   },
