@@ -136,6 +136,13 @@ void deleteBack(node *&head)
     <>
       <Header head_text="Single Linear Linked List" />
       <main className="wrapper my-4 flex flex-col gap-4">
+        <p>
+          A single linear linked list is a sequence of connected nodes where
+          each node contains some data and a pointer to the next node in the
+          list. The last node points to `nullptr`, marking the end of the list.
+          It is called "single" because the connection is one-way, and "linear"
+          because the nodes are arranged in a straight sequence.
+        </p>
         <Note
           note={
             <div>
