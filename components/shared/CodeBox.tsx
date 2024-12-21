@@ -57,7 +57,7 @@ const CodeBox = ({ code }: { code: string }) => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="w-full relative overflow-hidden">
       <SyntaxHighlighter
         language="cpp"
         style={atomDark}

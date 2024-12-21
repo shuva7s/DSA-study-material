@@ -147,7 +147,7 @@ void deleteBack(node *&head)
           note={
             <div>
               Note that when we are <b>changing the head pointer</b>, <b>or</b>{" "}
-              there is a<b>possibility of changing the head pointer</b>,{" "}
+              there is a <b>possibility of changing the head pointer</b>,{" "}
               <b>we use *&</b>. <b>Otherwise</b>, we use <b>*</b>
             </div>
           }

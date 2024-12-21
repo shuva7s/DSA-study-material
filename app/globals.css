@@ -110,7 +110,26 @@ body {
   .wrapper {
     @apply px-4 md:px-6;
   }
+
   .custom_height {
     height: calc(100vh - 3.75rem);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 0.3rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 5px;
+  }
+  .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    background: hsl(var(--accent));
+    /* background-color: ; */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
   }
 }
