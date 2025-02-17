@@ -32,12 +32,12 @@ const navLinks = [
     href: "/double-circular-linked-list",
   },
   {
-    name: "Stacks",
-    href: "/stacks",
+    name: "Stack",
+    href: "/stack",
   },
   {
-    name: "Queues",
-    href: "/queues",
+    name: "Queue",
+    href: "/queue",
   },
   {
     name: "Binary Tree",

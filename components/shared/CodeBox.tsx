@@ -78,6 +78,7 @@ const CodeBox = ({ code }: { code: string }) => {
         variant={"secondary"}
         disabled={copied}
         className="absolute top-4 right-2 z-10"
+        name="copy"
       >
         {copied ? <Check /> : <Copy />}
       </Button>

@@ -126,7 +126,6 @@ body {
   }
   .custom-scrollbar:hover::-webkit-scrollbar-thumb {
     background: hsl(var(--accent));
-    /* background-color: ; */
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
